@@ -9,12 +9,10 @@
 
 ## Code Style Guidelines
 - **File format**: Devicetree (.dts/.dtsi) for keymaps, .conf for config
+- **Naming**: Use snake_case for defines (BASE, LOWER, RAISE, ADJUST)
+- **Keymap structure**: Layer-based with descriptive display-name comments
+- **Bindings**: Use `&kp` for key presses, `&mo` for momentary layers, `&bt` for Bluetooth
+- **Comments**: ASCII art layout diagrams above each layer definition
 - **License**: MIT SPDX header in all keymap files
 - **Imports**: Standard ZMK behaviors and dt-bindings at top of keymap files
-- **Naming**: Use snake_case for defines (BASE, LOWER, RAISE, ADJUST)
-- **Keymap structure**: Layer-based with ASCII art layout diagrams above each layer
-- **Bindings**: Use `&kp` for key presses, `&mo` for momentary layers, `&bt` for Bluetooth
 - **Conditional layers**: Use `conditional_layers` for complex layer combinations
-- **GPIO configuration**: Use (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) patterns
-- **Comments**: Chinese comments allowed in .conf files, ASCII art in keymaps
-- **Display names**: Add `display-name = "layer_name"` for special layers

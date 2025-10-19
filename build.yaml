@@ -1,14 +1,41 @@
----
 include:
- # - board: eyelash_sofle_left
-#    shield: nice_view
-  - board: eyelash_sofle_right
-#   shield: nice_view_custom
-    shield: nice_view
-  - board: eyelash_sofle_left
-    shield: nice_view
+# Sofle without dongle
+  # Sofle with oled display(with nice_oled module)
+  - board: nice_nano_v2 
+    shield: Sofle_left nice_oled
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: eyelash_sofle_studio_left
-  - board: eyelash_sofle_left
+  - board: nice_nano_v2
+    shield: Sofle_right nice_oled
+    
+  # Sofle with nice!view display(with nice_view_custom module)
+  - board: nice_nano_v2
+    shield: Sofle_left nice_view_adapter nice_view_custom
+    snippet: studio-rpc-usb-uart
+  - board: nice_nano_v2
+    shield: Sofle_right nice_view_adapter nice_view_custom
+
+#Sofle with dongle 
+  # dongle with LCD display
+  - board: nice_nano_v2
+    shield: Sofle_dongle_central dongle_screen
+    snippet: studio-rpc-usb-uart
+    artifact-name: Sofle_central_dongle
+    
+  # peripheral with oled display(with nice_oled module)
+  - board: nice_nano_v2
+    shield: Sofle_dongle_left nice_oled
+    artifact-name: Sofle_peripheral_left_oled
+  - board: nice_nano_v2
+    shield: Sofle_dongle_right nice_oled
+    artifact-name: Sofle_peripheral_right_oled
+    
+  # peripheral with nice!view display(with nice_view_custom module)
+  - board: nice_nano_v2
+    shield: Sofle_dongle_left nice_view_adapter nice_view_custom
+    artifact-name: Sofle_peripheral_left_nice_view
+  - board: nice_nano_v2
+    shield: Sofle_dongle_right nice_view_adapter nice_view_custom
+    artifact-name: Sofle_peripheral_right_nice_view
+ 
+  - board: nice_nano_v2
     shield: settings_reset
