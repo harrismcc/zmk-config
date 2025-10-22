@@ -1,41 +1,22 @@
+# This file generates the GitHub Actions matrix
+# For simple board + shield combinations, add them
+# to the top level board and shield arrays, for more
+# control, add individual board + shield combinations to
+# the `include` property, e.g:
+#
+# board: [ "nice_nano_v2" ]
+# shield: [ "corne_left", "corne_right" ]
+# include:
+#   - board: bdn9_rev2
+#   - board: nice_nano_v2
+#     shield: reviung41
+#
+---
 include:
-# Sofle without dongle
-  # Sofle with oled display(with nice_oled module)
-  - board: nice_nano_v2 
-    shield: Sofle_left nice_oled
+  - board: nice_nano_v2
+    shield: sofle_left
     snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
-    shield: Sofle_right nice_oled
-    
-  # Sofle with nice!view display(with nice_view_custom module)
-  - board: nice_nano_v2
-    shield: Sofle_left nice_view_adapter nice_view_custom
-    snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
-    shield: Sofle_right nice_view_adapter nice_view_custom
-
-#Sofle with dongle 
-  # dongle with LCD display
-  - board: nice_nano_v2
-    shield: Sofle_dongle_central dongle_screen
-    snippet: studio-rpc-usb-uart
-    artifact-name: Sofle_central_dongle
-    
-  # peripheral with oled display(with nice_oled module)
-  - board: nice_nano_v2
-    shield: Sofle_dongle_left nice_oled
-    artifact-name: Sofle_peripheral_left_oled
-  - board: nice_nano_v2
-    shield: Sofle_dongle_right nice_oled
-    artifact-name: Sofle_peripheral_right_oled
-    
-  # peripheral with nice!view display(with nice_view_custom module)
-  - board: nice_nano_v2
-    shield: Sofle_dongle_left nice_view_adapter nice_view_custom
-    artifact-name: Sofle_peripheral_left_nice_view
-  - board: nice_nano_v2
-    shield: Sofle_dongle_right nice_view_adapter nice_view_custom
-    artifact-name: Sofle_peripheral_right_nice_view
- 
+    shield: sofle_right
   - board: nice_nano_v2
     shield: settings_reset
